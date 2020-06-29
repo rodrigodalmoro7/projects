@@ -1,0 +1,13 @@
+textarea {
+  resize: none;
+}
+
+.card {
+  width: 200px;
+  text-align: center;
+}
+.btn-edit {
+background-color: lightslategray;
+color: #343a40;
+
+}

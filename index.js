@@ -5,7 +5,6 @@ let editMessageInput = document.getElementById("editMessageBody");
 let addButton = document.getElementById("addButton");
 let scrapsField = document.getElementById("scrapsField");
 let btnSaveEdit = document.getElementById("saveEdit");
-
 let scraps = [];
 
 function renderScraps() {
@@ -31,7 +30,6 @@ function addNewScrap() {
   titleInput.value = "";
   messageInput.value = "";
   scraps.push({ title, message });
-
   renderScraps();
 }
 
@@ -62,15 +60,19 @@ function openEditModal(position) {
   editTitleInput.value = scraps[position].title;
   editMessageInput.value = scraps[position].message;
 
-  btnSaveEdit.setAttribute("onclick", `saveChanges(${position}`);
+  btnSaveEdit.setAttribute("onclick", `saveChanges(${position})`);
 }
 
 function saveChanges(position) {
-  editTitleInput.value = title;
-  editMessageInput.value = message;
-  scraps.push({ title, message });
+  title = editTitleInput.value;
+  message = editMessageInput.value;
+
+  scraps[position].title = title;
+  scraps[position].message = message;
 
   renderScraps();
 }
 
 addButton.onclick = addNewScrap;
+
+saveEdit.onclick = saveChanges;

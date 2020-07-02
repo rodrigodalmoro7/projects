@@ -72,9 +72,6 @@ function saveChanges(position) {
   scraps[position].title = title;
   scraps[position].message = message;
 
-  editTitleInput[(position, 0)] = title;
-  editMessageInput[(position, 0)] = message;
-
   saveInStorage();
 
   renderScraps(position);
@@ -85,4 +82,3 @@ function saveInStorage() {
 }
 
 addButton.onclick = addNewScrap;
-btnSaveEdit.onclick = saveChanges;

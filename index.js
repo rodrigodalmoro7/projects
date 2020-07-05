@@ -55,8 +55,6 @@ function createScrapCard(title, message, position) {
                 >
                   Editar
                 </button>
-
-
               </div>
             </div>
   `;

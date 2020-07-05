@@ -45,16 +45,27 @@ function createScrapCard(title, message, position) {
                 </p>
               </div>
               <div class="w100 d-flex justify-content-end pr-2 pb-2">
-                <button class="btn btn-danger mr-1">Deletar</button>
-                <button
-                  class="btn btn-info"
+
+             
+                <button class="btn btn-danger mr-1" onclick="deleteCard(${position})">Deletar</button>
+              
+              
+                <button class="btn btn-info"
                   onclick="openEditModal(${position})"
                 >
                   Editar
                 </button>
+
+
               </div>
             </div>
   `;
+}
+
+function deleteCard(position) {
+  scraps.splice(position, 1);
+  saveInStorage();
+  renderScraps();
 }
 function openEditModal(position) {
   $("#editModal").modal("toggle");
